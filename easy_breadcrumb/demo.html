@@ -1,0 +1,43 @@
+{% load breadcrumb_tags %}
+
+<html>
+    <head>
+        <title> !!! </title>
+
+        <style type="text/css">
+
+            .breadcrumbs {
+                height: 20px;
+            }
+
+            li { 
+                float:left; 
+                list-style: none;
+                margin-left: 10px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="breadcrumbs">
+            {% breadcrumb %}oogas
+    david
+                {% block breadcrumbs %} {% with a=4 %}Home{% endwith %}{% endblock breadcrumbs %}
+                Pineapple
+                Grove
+            {% endbreadcrumb %}
+        </div>
+
+        <div class="content">
+          {% block content %}
+
+              <h1> {% block txt %}demo.html!{% endblock %} </h1>
+
+          {% endblock %}
+        </div>
+
+    </body>
+
+</head>

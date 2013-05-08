@@ -7,6 +7,9 @@ from django.conf.urls import patterns, include, url
 urlpatterns = patterns('',
     # Examples:
      url(r'^$', 'easy_breadcrumb.views.home', name='home'),
+     url(r'^section/$', 'easy_breadcrumb.views.section', name='section'),
+     url(r'^section/subsection/$', 'easy_breadcrumb.views.sub_section',
+         name='sub-section'),
 
     # url(r'^easy_breadcrumb/', include('easy_breadcrumb.foo.urls')),
 
