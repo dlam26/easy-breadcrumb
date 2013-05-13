@@ -2,12 +2,18 @@
 
 <html>
     <head>
-        <title> !!! </title>
+        <title> easy_breadcrumb demo! </title>
 
         <style type="text/css">
 
             .breadcrumbs {
                 height: 20px;
+            }
+
+            .breadcrumbs.firstone {
+                padding-top: 80px;
+                padding-left: 100px;
+                margin-bottom: 100px;
             }
 
             li { 
@@ -16,19 +22,42 @@
                 margin-left: 10px;
             }
 
+            /* Example of how to remove the leading caret */
+            li.first .pointer {
+                display:none;
+            }
+
         </style>
     </head>
 
     <body>
 
-        <div class="breadcrumbs">
+        <div class="breadcrumbs  firstone">
             {% breadcrumb %}oogas
     david
                 {% block breadcrumbs %} {% with a=4 %}Home{% endwith %}{% endblock breadcrumbs %}
                 Pineapple
                 Grove
+
+                                            Oakland A's
             {% endbreadcrumb %}
         </div>
+
+        <div class="breadcrumbs with-urls">         {# example of breadcrumbs with URLs! #}
+
+            {% with foxnews_url="http://foxnews.com"  trolling_url="http://en.wikipedia.org/wiki/Troll_(Internet)" %}
+                {% breadcrumb %}
+
+                    Yahoo   -|-          http://yahoo.com
+                  Fox News  -|-   {{ foxnews_url }}
+                  trolling  -|-                     {{ trolling_url }}
+
+                {% endbreadcrumb %}
+            {% endwith %}
+        </div>
+
+
+
 
         <div class="content">
           {% block content %}
@@ -39,5 +68,4 @@
         </div>
 
     </body>
-
-</head>
+</html>
