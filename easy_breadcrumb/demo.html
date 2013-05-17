@@ -35,7 +35,7 @@
         <div class="breadcrumbs  firstone">
             {% breadcrumb %}oogas
     david
-                {% block breadcrumbs %} {% with a=4 %}Home{% endwith %}{% endblock breadcrumbs %}
+                {% block breadcrumb %} {% with a=4 %}Home{% endwith %}{% endblock breadcrumb %}
                 Pineapple
                 Grove
 
@@ -49,8 +49,10 @@
                 {% breadcrumb %}
 
                     Yahoo   -|-          http://yahoo.com
-                  Fox News  -|-   {{ foxnews_url }}
+                  Fox News  {{ CRUMB_SEPARATOR }}  {{ foxnews_url }}
                   trolling  -|-                     {{ trolling_url }}
+
+                  No URL at end!  -|-
 
                 {% endbreadcrumb %}
             {% endwith %}
@@ -62,7 +64,11 @@
         <div class="content">
           {% block content %}
 
-              <h1> {% block txt %}demo.html!{% endblock %} </h1>
+              <h1> 
+                  {% block txt %}demo.html!{% endblock %} 
+              
+                    {{ CRUMB_SEPARATOR }}
+              </h1>
 
           {% endblock %}
         </div>

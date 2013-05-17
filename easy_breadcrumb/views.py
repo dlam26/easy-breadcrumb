@@ -1,23 +1,19 @@
 from django.http import HttpResponse
-from django.template import loader, Template, Context
-
+from django.template import loader, RequestContext
 
 def home(request):
     t = loader.get_template('demo.html')
-    c = Context({'asdf': 1})
-    return HttpResponse(t.render(c))
+    return HttpResponse(t.render(RequestContext(request, {})))
 
 
 def section(request):
     t = loader.get_template('section.html')
-    c = Context({'asdf': 1})
-    return HttpResponse(t.render(c))
+    return HttpResponse(t.render(RequestContext(request, {})))
 
 
 def sub_section(request):
     t = loader.get_template('sub-section.html')
-    c = Context({'asdf': 1})
-    return HttpResponse(t.render(c))
+    return HttpResponse(t.render(RequestContext(request, {})))
 
 
 #     return HttpResponse('<h1>hai</h1>')

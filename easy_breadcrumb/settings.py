@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     "easy_breadcrumb",
 )
 
+
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.
@@ -159,3 +160,7 @@ LOGGING = {
         },
     }
 }
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'easy_breadcrumb.context_processors.crumb_separator',
+)
